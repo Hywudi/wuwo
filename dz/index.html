@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+				text-decoration: none;
+				list-style: none;
+			}
+			#sw{
+				width: 100%;
+				height: auto;
+			}
+			#top{
+				width: 75%;
+				text-align: center;
+				height: 50px;
+				margin: 0px auto;
+				background-color:white;
+			}
+			#tp{
+				width: 75%;
+				height: 50px;
+				text-align: center;
+				margin: 0px auto;
+				background-color:white;
+			}
+			.op{
+				width: 100%;
+				height: 50px;
+			}
+			.oo1{
+				height: 100%;
+				line-height: 50px;
+				background-color: white;
+				padding-top: 7px;
+				padding-bottom: 7px;
+				float: left;
+			}
+			.o1{
+				width: 15%;
+			}
+			.o2{
+				width: 10%;
+			}
+			.o3{
+				width: 39%;
+			}
+			.o4{
+				width: 15%;
+			}
+			.o5{
+				width: 20%;
+			}
+			.img-xys{
+				display: inline-block;
+				height: auto;
+				max-width: 100%;
+			}
+			.inp:focus{
+				outline:none;
+			}
+			.tpu{
+				width: 100%;
+				height: 50px;
+				line-height: 50px;
+			}
+			.tpl{
+				float: left;
+			}
+			.tl{
+				margin-left: 20px;
+			}
+			.tl1{
+				font-size: 1.4em;
+			}
+			
+			
+			#zhong{
+				width: 100%;
+				height: 2000px;
+				background-color: #eeeeee;
+			}
+			.zo{
+				width: 75%;
+				margin: 0px auto;
+			}
+			.zn{
+				width: 100%;
+				height: 400px;
+			}
+			.zn1{
+				width: 100%;
+				height: 15%;
+			}
+			.zn2{
+				width: 100%;
+				height: 85%;
+			}
+			.zg{
+				width: 24%;
+				height: 100%;
+				background-color: white;
+				border-radius: 5px;
+				float: left;
+			}
+			.zg:hover{
+				box-shadow: 0 0 20px #d8d8d8;
+			}
+			.zg1{
+				margin-left: 14px;
+			}
+			.img1{
+				width: 100%;
+				height: 50%;
+			}
+			.text1{
+				width: 100%;
+				height: 30%;
+			}
+			.text2{
+				width: 100%;
+				height: 20%;
+			}
+			.kc:hover{
+				color: red;
+			}
+			.kc1 a:hover{
+				color: red;
+			}
+			.kc1 ul{
+				background-color: white;
+				box-shadow: 0 0 5px #e6e6e6;
+				position: absolute;
+				display: none;
+			}
+			.kc1 ul li{
+				float: none;
+				width: 70px;
+			}
+			.kc1:hover ul {
+				display: block;
+			}
+			.kcfl a:hover{
+				color: red;
+			}
+			.kcfl ul{
+				background-color: white;
+				box-shadow: 0 0 5px #e6e6e6;
+				position: absolute;
+				display: none;
+			}
+			.kcfl ul li{
+				float: none;
+				width: 110px;
+				height: 40px;
+			}
+			.kcfl ul li:hover{
+				border-right: 2px solid red;
+			}
+			.kcfl:hover ul {
+				display: block;
+			}
+			 .kcfl ul div{
+				width: 500px;
+				margin-left:112px;
+				background-color: white;
+				height: 280px;
+				position: absolute;
+				top: 0px;
+				display: none;
+			}
+			.kcfl li:hover div{
+				display: block;
+				box-shadow: 0 0 5px #e6e6e6;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="sw">
+			<div style="position:fixed;width: 100%;height: 120px;background-color: white;">
+				<div id="top">
+				<ul class="op">
+					<li class="oo1 o1">
+						<a href="">
+							<img class="img-xys" src="img/b42778566d104b7dbe330ff09a0c18c8.png" style="width: 100%;height: 50px;" alt="">
+						</a>
+					</li>
+					<li class="oo1 o2">
+						<div class="kcfl"><a href="">课程分类</a>
+							<ul>
+								<li class="wo" v-for="(itme) in list"><a href="">{{itme}}</a>
+								<div class="wo1" >
+									
+								</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="oo1 o3">
+						<div style="width: 100%;height: 50px;line-height: 50px;border: 1px solid red;border-radius: 5px;">
+							<div class="kc1" style="width: 15%;height: 50px;line-height: 50px; float: left;"><a href="" class="kc">课程</a>
+							<ul>
+								<li v-for="(itme) in list"><a href="">{{itme}}</a></li>
+							</ul>
+							</div>
+							<input class="inp" placeholder="如何三天搞定专四全科" type="text" style="border-style:none none none none;;width: 70%;float: left;" name="" id="" value="" /><div style="width: 15%;height: 50px;line-height: 50px;float: left;background-color: red;">
+								<a href="">搜索</a>
+							</div>
+						</div>
+					</li>
+					<li class="oo1 o4">
+						<div >
+							<span >0</span>
+							<span style="margin-left: 5%;">0</span>
+							<span style="margin-left: 5%;">0</span>
+							<span style="margin-left: 5%;">0</span>
+						</div>
+					</li>
+					<li class="oo1 o5">
+						<div >
+							<span style="margin-left: 5%;">会员中心</span>
+							<span style="margin-left: 5%;">我的学习</span>
+							<span style="margin-left: 5%;">登陆注册</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+				<div id="tp">
+					<ul class="tpu">
+						<li class="tpl"><a class="tl1 " href="">大学考试</a></li>
+						<li class="tpl"><a class="tl " href="">精选</a></li>
+						<li class="tpl"><a class="tl " href="">考研</a></li>
+						<li class="tpl"><a class="tl " href="">四六级</a></li>
+						<li class="tpl"><a class="tl " href="">雅思</a></li>
+						<li class="tpl"><a class="tl " href="">公务员</a></li>
+						<li class="tpl"><a class="tl " href="">大学英语</a></li>
+						<li class="tpl"><a class="tl " href="">财会金融</a></li>
+						<li class="tpl"><a class="tl " href="">建筑工程</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div id="zhong" >
+				<div class="zo">
+					<div class="zn" style="padding-top: 200px;">
+						<div class="zn1">
+							<h1>直播</h1>
+							
+						</div>
+						<div class="zn2">
+							<div class="zg">
+								<div class="img1"><img src="img/znn.png" style="width: 100%;height: 100%;" ></div>
+								<div class="text1">
+									<p>
+										<span>{{m}}月{{d}}日</span><span>{{t}}</span>
+									</p>
+									<p>
+										<span>{{z}}</span><span>{{tet}}</span>
+									</p>
+									
+								</div>
+								<div class="text2">
+									<p>{{nam}}</p>
+									<p>{{wz}}</p>
+								</div>
+							</div>
+							<div class="zg zg1">
+								<div class="img1"></div>
+								<div class="text1">
+									<p>
+										<span>月日</span><span>时间</span>
+									</p>
+									<p>
+										<span>自研</span><span>文字</span>
+									</p>
+									
+								</div>
+								<div class="text2">
+									<p>名字</p>
+									<p>文中</p>
+								</div>
+							</div>
+							<div class="zg zg1">
+								<div class="img1"></div>
+								<div class="text1">
+									<p>
+										<span>月日</span><span>时间</span>
+									</p>
+									<p>
+										<span>自研</span><span>文字</span>
+									</p>
+									
+								</div>
+								<div class="text2">
+									<p>名字</p>
+									<p>文中</p>
+								</div>
+							</div>
+							<div class="zg zg1">
+								<div class="img1"></div>
+								<div class="text1">
+									<p>
+										<span>月日</span><span>时间</span>
+									</p>
+									<p>
+										<span>自研</span><span>文字</span>
+									</p>
+									
+								</div>
+								<div class="text2">
+									<p>名字</p>
+									<p>文中</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="xia">
+				
+			</div>
+		</div>
+		<script type="text/javascript">
+			var ck=new Vue({
+				el:'.kcfl',
+				data:{
+					list:['实用英语','兴趣技能','大学考试','职业考证',
+					'IT互联网','职场提升','设计创作'
+					]
+				}
+			})
+			
+			var vm=new Vue({
+				el:'.kc1',
+				data:{
+					list:['课程','网课']
+				}
+			})
+		new Vue({
+			el:'.zg',
+			data:{
+				m:9,d:7,
+				t:'19:00',
+				z:'自研',
+				tet:'s123123',
+				nam:'赵楠楠',
+				wz:'sdsdad',
+				im:'znn'
+			}
+		})
+	</script>
+	</body>
+	
+</html>
